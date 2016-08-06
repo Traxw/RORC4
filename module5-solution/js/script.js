@@ -68,6 +68,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
         // Load home snippet page
         $ajaxUtils.sendGetRequest(homeHtmlUrl, function (homeHtml) {
+            document.querySelector("#main-content").innerHTML = homeHtml;
             var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
 
             var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName",
